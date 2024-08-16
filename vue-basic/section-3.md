@@ -111,3 +111,132 @@ Vue.createApp({
 
 ![image](https://github.com/user-attachments/assets/5e43d044-55fd-450a-89fe-a8249185fc3e)
 
+
+## 5강
+
+### Event Emit 소개
+
+이벤트 발생은 컴포넌트 통신 방법 중 하위 컴포넌트에서 상위 컴포넌트로 통신하는 방식입니다.
+
+* 코드
+```html
+<div id="app">
+    <app-contents></app-contents>
+</div>
+```
+
+```javascript
+var appContents = {
+    template: `
+        <p>
+            <button v-on:click="sendEvent">갱신</button>
+        </p>
+    `, //백틱을 사용하면 여러 라인 가능
+    methods: {
+        sendEvent() {
+            this.$emit('refresh');
+        }
+    } 
+}
+
+Vue.createApp({
+    components: {
+        //'컴포넌트 이름' : 컴포넌트 내용
+        'app-contents' : appContents
+    }
+}).mount('#app');
+```
+
+## 6강
+
+### Event Emit 구현
+
+* 이벤트 발생 코드 형식
+
+`<app-contents v-on:이벤트 명="상위 컴포넌트의 메서드 이름"></app-contents>`
+```html
+<div id="app">
+    <app-contents v-on:refresh="showAlert"></app-contents>
+</div>
+```
+
+* 이벤트 코드
+```javascript
+var appContents = {
+    template: `
+        <p>
+            <button v-on:click="sendEvent">갱신</button>
+        </p>
+    `,
+    methods: {
+        sendEvent() {
+            this.$emit('refresh');
+        }
+    } 
+}
+
+// 루트 컴포넌트
+Vue.createApp({
+    methods:{
+        showAlert() {
+            alert('새로고침');
+        }
+    },
+    components: {
+        'app-contents' : appContents
+    }
+}).mount('#app');
+```
+
+
+## 7강
+
+### 같은 레벨의 컴포넌트 간 데이터 전달 방법
+
+```html
+<div id="app">
+  <app-header v-bind:app-title="message"></app-header>
+  <app-contents v-on:login="receive"></app-contents>
+</div>
+```
+
+
+```javascript
+var appHeader = {
+props: ['appTitle'],
+template: '<h1>{{ appTitle }}</h1>',
+}
+
+var appContents = {
+template: `
+    <p>
+    <button v-on:click="sendEvent">로그인</button>
+    </p>
+`,
+methods: {
+    sendEvent() {
+    this.$emit('login');
+    }
+}
+}
+
+// 루트 컴포넌트
+Vue.createApp({
+data() {
+    return {
+    message: ''
+    }
+},
+methods: {
+    receive() {
+    console.log('받았다');
+    this.message = '로그인 됨'
+    }
+},
+components: {
+    // '컴포넌트 이름': 컴포넌트 내용
+    'app-header': appHeader,
+    'app-contents': appContents
+}  
+}).mount('#app');
+```
