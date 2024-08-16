@@ -41,7 +41,7 @@ https://vuejs.org/guide/introduction.html
 ### VUE 3의 코드 작성 방식
 
 #### 옵션 API
-```
+```javascript
 <div id="app">{{ message }}</div>
 
 <script>
@@ -55,7 +55,7 @@ https://vuejs.org/guide/introduction.html
 </script>
 ```
 #### Composition API
-```
+```javascript
 <div id="app">{{ message }}</div>
 
 <script>
@@ -92,7 +92,7 @@ https://vuejs.org/guide/introduction.html
 Content Delivery Network : 라이브러리 파일을 어딘가에 배포해두고 서버에 올려놓고 우리가 빠르게 접근할 수 있게 링크로 올려 놓은 것
 
 ### hello world 해보기 
-```
+```javascript
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 <div id="app">
@@ -110,7 +110,8 @@ Content Delivery Network : 라이브러리 파일을 어딘가에 배포해두�
   }).mount('#app');
 </script>
 ```
->> 라이브 서버로 열어서 확인
->> 개발자도구 > vue에서 데이터 값을 볼 수 있음. 편집도 가능.
+> 라이브 서버로 열어서 확인
+
+> 개발자도구 > vue에서 데이터 값을 볼 수 있음. 편집도 가능.
 
 data의 변화에 따라서 화면의 ui값이 바뀌는 것이 vue에서 추구하는 reactivity라는 개념.
