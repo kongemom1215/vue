@@ -64,3 +64,41 @@ https://joshua1988.github.io/vue-camp/vue/components-communication.html
 
 * 상위에서 하위로는 데이터를 내려줌, **프롭스 속성**
 * 하위에서 상위로는 이벤트를 올려줌, **이벤트 발생**
+
+
+## 4강
+
+### Vue Component Props
+
+상위, 하위 컴포넌트 == 부모, 자식 컴포넌트
+
+#### Props 속성
+프롭스 속성은 컴포넌트 간에 데이터를 전달할 수 있는 컴포넌트 통신 방법입니다.  
+프롭스 속성을 기억할 때는 상위 컴포넌트에서 하위 컴포넌트로 내려보내는 데이터 속성으로 기억하면 쉽습니다.
+
+* 자식 컴포넌트에 props를 전달하기
+`<app-header v-bind:프롭스이름="상위컴포넌트의 데이터이름"></app-header>`
+
+```html
+<div id="app">
+    <app-header v-bind:title="appTitle"></app-header>
+</div>
+```
+
+v-bind를 통해서 상위 컴포넌트의 데이터를 바인딩(연결)시킨다.
+
+```javascript
+Vue.createApp({
+    data(){
+        return {
+            appTitle: '프롭스 넘기기'
+        }
+    },
+    components: {
+        'app-header': {
+            template: '<h1>{{ title }}</h1>',
+            props: ['title']
+        }
+    }
+}).mount('#app');
+```
