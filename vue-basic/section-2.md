@@ -63,7 +63,8 @@ Vue.createApp({
 
 버튼을 클릭할때마다 이 method를 실행하라.
 
-** v-on : 이벤트 핸들링 **
+
+**v-on : 이벤트 핸들링** 
 
 * `click="event"` : 클릭했을 때 실행
 * `change="event"` : 요소가 변경될 때 실행
@@ -87,8 +88,12 @@ Vue.createApp({
 v-if, v-else, v-for, v-bind 여러가지 디렉티브가 존재한다.  
 UI 개발을 할 때 추가적으로 자바스크립트 코드를 작성하지않고 좀더 간편하게 작성할 수 있도록 디렉티브 문법 제공.
 
+`참고 URL`  
+
 https://vuejs.org/api/built-in-directives.html#v-for  
+
 https://joshua1988.github.io/vue-camp/syntax/methods.html#%E1%84%86%E1%85%A6%E1%84%89%E1%85%A5%E1%84%83%E1%85%B3-%E1%84%8F%E1%85%A9%E1%84%83%E1%85%B3-%E1%84%92%E1%85%A7%E1%86%BC%E1%84%89%E1%85%B5%E1%86%A8  
+
 
 v-for 디렉티브를 사용하여 배열을 리스트로 랜더링할 수 있습니다.
 
