@@ -15,3 +15,50 @@ https://joshua1988.github.io/vue-camp/vue/components.html
 * 컴포넌트 tree : 트리구조 형태로 형성
 * root 컴포넌트 : 최상위 컴포넌트
 
+
+## 2강
+
+### Vue Component 등록과 표시
+
+* 컴포넌트 등록하기1
+```javascript
+Vue.createApp({
+    // 인스턴스 옵션 속성 = 옵션 api
+    components: {
+        // '컴포넌트 이름': 컴포넌트 내용
+        'app-header': {
+            template: '<h1>컴포넌트 등록</h1>'
+        }
+    }
+}).mount('#app');
+```
+
+* 컴포넌트 등록하기2
+```javascript
+// 인스턴스 생성
+var app = Vue.createApp();
+
+// 전역 컴포넌트 등록
+app.component('app-header', {
+  template: '<h1>Header Component</h1>'
+});
+```
+
+* 컴포넌트 표시하기
+```html
+<div id="app">
+    <app-header></app-header>
+</div>
+```
+
+## 3강
+
+### Vue Component 통신 방식
+
+https://joshua1988.github.io/vue-camp/vue/components-communication.html  
+
+뷰 컴포넌트는 각각 고유한 데이터 유효 범위를 갖습니다.  
+따라서, 컴포넌트 간에 데이터를 주고 받기 위해선 아래와 같은 규칙을 따라야 합니다.
+
+* 상위에서 하위로는 데이터를 내려줌, **프롭스 속성**
+* 하위에서 상위로는 이벤트를 올려줌, **이벤트 발생**
