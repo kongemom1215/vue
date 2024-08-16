@@ -77,7 +77,9 @@ https://joshua1988.github.io/vue-camp/vue/components-communication.html
 프롭스 속성을 기억할 때는 상위 컴포넌트에서 하위 컴포넌트로 내려보내는 데이터 속성으로 기억하면 쉽습니다.
 
 * 자식 컴포넌트에 props를 전달하기
+  
 `<app-header v-bind:프롭스이름="상위컴포넌트의 데이터이름"></app-header>`
+
 
 ```html
 <div id="app">
@@ -102,3 +104,10 @@ Vue.createApp({
     }
 }).mount('#app');
 ```
+
+* 결과
+
+![image](https://github.com/user-attachments/assets/569fe22c-1f74-4a6c-a11e-6dae1e9493e5)
+
+![image](https://github.com/user-attachments/assets/5e43d044-55fd-450a-89fe-a8249185fc3e)
+
