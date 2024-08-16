@@ -193,6 +193,10 @@ Vue.createApp({
 
 ### 같은 레벨의 컴포넌트 간 데이터 전달 방법
 
+![image](https://github.com/user-attachments/assets/3760b4dd-a4e4-4ef0-9ffc-c8f72b6e14ce)
+
+Lift State Up : 상태(데이터)를 끌어 올린다.
+
 ```html
 <div id="app">
   <app-header v-bind:app-title="message"></app-header>
