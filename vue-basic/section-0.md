@@ -2,8 +2,7 @@
 
 ## 1강
 
-## Evan YOu
-2014년에 만들었음.
+#### Evan YOU - 2014년에 만들었음.
 
 ### Vue.js 란?
 * 간단한 화면 UI 개발부터 라우팅, SSR 등의 애플리케이션 레벨의 개발을 지원하는 프레임워크
@@ -16,15 +15,15 @@
 * 프론트엔드, 백엔드 등 점차 직무적으로 전문화되고 이쓴ㄴ 상황에서 처음 개발을 시작하는 프론트엔드 개발자 또는 백엔드 개발자에게
 선호되는 경향.
 
-### Vue로 개발된 사이트들
-https://www.kakaocorp.com/page/
-https://vibe.naver.com/today
-https://programmers.co.kr/
-https://developer.apple.com/documentation
-https://section.cafe.naver.com/ca-fe/home
+> Vue로 개발된 사이트들
+>> https://www.kakaocorp.com/page/
+>> https://vibe.naver.com/today
+>> https://programmers.co.kr/
+>> https://developer.apple.com/documentation
+>> https://section.cafe.naver.com/ca-fe/home
 
-### 사용하고있는 유명 조직
-위키미디어 재단, NASA, Apple, Google, Microsoft, GitLab, Zoom, Tencent, Weibo, Bilibili, Kuaishou
+> 사용하고있는 유명 조직
+>> 위키미디어 재단, NASA, Apple, Google, Microsoft, GitLab, Zoom, Tencent, Weibo, Bilibili, Kuaishou
 
 ## 2강
 
