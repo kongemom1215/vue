@@ -1,8 +1,6 @@
 # Vue JS 템플릿 문법
 
-## 1강
-
-### Vue 템플릿 문법(Template Syntax) 소개
+## 1강 : Vue 템플릿 문법(Template Syntax) 소개
 
 https://joshua1988.github.io/vue-camp/vue/template.html
 
@@ -53,9 +51,7 @@ Vue.createApp({
 * v-model
 
 
-## 2강
-
-### Vue 디렉티브 : v-if, v-show
+## 2강 : Vue 디렉티브 : v-if, v-show
 
 * v-if 사용법
 ```html
@@ -104,9 +100,7 @@ Vue.createApp({
 }).mount("#app");
 ```
 
-## 3강
-
-### Vue 데이터 바인딩: id, class, style
+## 3강 : Vue 데이터 바인딩: id, class, style
 
 * 클래스 바인딩
 
