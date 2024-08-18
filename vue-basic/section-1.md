@@ -118,3 +118,9 @@ Vue의 데이터 바인딩은 화면에 표시되는 값과 데이터 값이 연
 3. setter가 트리거가 되면 watcher의 Notify. 컴포넌트가 다시 렌더링 된다.
  
 ![image](https://github.com/user-attachments/assets/afc384b3-ccdb-416b-98f7-a10be4be77dc)
+
+
+### 반응성??
+
+반응성이란 데이터의 변경에 따라 자동으로 화면을 갱신해주는 것
+
