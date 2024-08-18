@@ -30,6 +30,7 @@
 
 > 뷰 로더는 웹팩의 로더 종류 중 하나이고, 뷰 CLI 로 프로젝트를 생성하면 기본적으로 설정이 되어 있다.
 
+
 * 싱글 파일 컴포넌트 명명규칙 : 컴포넌트는 무조건 파스칼 케이스(HelloWorld)로 작성
 
 
@@ -53,6 +54,7 @@ export default {
 ## 3강 : 싱글 파일 컴포넌트 코드 작성 팁
 
 * Vue VsCode Snippets 활용  
+
 `vbc` : 싱글 파일 컴포넌트 형식이 만들어짐 (template-script-style)  
 
 `vda` : data() 스니펫 제공
@@ -95,18 +97,112 @@ export default {
 1. components 폴더에 AppHeader.vue 생성
 
 2. App.vue에 AppHeader.vue 추가하기
-    1. `import AppHeader from './components/AppHeader.vue';` 파일 추가   
-    // import 컴포넌트이름 from '.컴포넌트 경로'
+    1. AppHeader.vue 파일 추가   
+    `import AppHeader from './components/AppHeader.vue';`  
+    `// import 컴포넌트이름 from '.컴포넌트 경로'`
     2. components에 AppHeader 추가
-    ```
+    ```javascript
      components: {
-        // '컴포넌트 이름': 컴포넌트 내용
-        // 'AppHeader': AppHeader
         AppHeader
     },
     ```
+    > // '컴포넌트 이름': 컴포넌트 내용
+    > // 'AppHeader': AppHeader
     3. template에 컴포넌트 추가
-    ```
+    ```javascript
     <template>
-    <AppHeader></AppHeader>
+        <AppHeader></AppHeader>
+    </template>
     ```
+
+
+## 5강 : 싱글파일 컴포넌트의 props, event emit
+
+### App 컴포넌트에서 AppHeader로 props 데이터 전달
+
+1. AppHeader.vue
+```javascript
+<template>
+    <h1>{{ appTitle }}</h1>
+</template>
+
+<script>
+    export default {
+        props: ['appTitle']
+    }
+</script>
+```
+App.vue에서 appTitle props를 받아오자
+
+2. App.vue
+``` javascript
+<template>
+  <AppHeader 
+    v-bind:appTitle="message">
+  </AppHeader>
+</template>
+
+export default {
+  components: {
+    AppHeader
+  },
+  data() {
+    return {
+      message: '앱 헤더 컴포넌트'
+    }
+  }
+}
+```
+appTitle을 상위 컴포넌트의 message에 연결(bind)
+
+### AppHeader의 이벤트를 발생해서 App에서 처리해보자
+
+1. AppHeader.vue
+```javascript
+<template>
+    <h1>{{ appTitle }}</h1>
+    <button @click="changeTitle">버튼</button>
+</template>
+
+<script>
+    export default {
+        props: ['appTitle'],
+        methods: {
+            changeTitle(){
+                this.$emit('change');
+            }
+        }
+    }
+</script>
+```
+
+버튼을 클릭하면 changeTitle 메소드가 실행되고, 상위 컴포넌트에 change로 전달
+
+2. App.vue
+```javascript
+<template>
+  <AppHeader 
+    v-bind:appTitle="message" 
+    v-on:change="changeMessage">
+  </AppHeader>
+</template>
+
+export default {
+  name: 'App',
+  components: {
+    AppHeader
+  },
+  data() {
+    return {
+      message: '앱 헤더 컴포넌트'
+    }
+  },
+  methods:{
+    changeMessage(){
+      this.message = '변경됨'
+    }
+  }
+}
+```
+change랑 bind된 changeMessage 메소드 실행
+
