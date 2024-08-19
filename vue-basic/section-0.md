@@ -7,7 +7,7 @@
 ### Vue.js 란?
 * 간단한 화면 UI 개발부터 라우팅, SSR 등의 애플리케이션 레벨의 개발을 지원하는 프레임워크
     * 라우팅 : 페이지간의 이동 
-    * SSR : Server Side Rendering, Vue.js로 SSR을 구현할때 Nuxt기술을 사용한다
+    * SSR : Server Side Rendering, Vue.js로 SSR을 구현할때 Nuxt기술을 사용한다  
         https://joshua1988.github.io/vue-camp/nuxt/ssr.html
 * 리액트와 더불어 실무에서 가장 많이 사용되고 있는 프론트엔드 개발 라이브러리
 * 리액트에 비해 진입 장벽이 낮고 쉽게 배울 수 있다.
